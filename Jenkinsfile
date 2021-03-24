@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Robot Framework System tests with Selenium') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome Results InfotivLab\Test '
+                sh 'robot --variable BROWSER:headlesschrome Results InfotivLab/Test '
             }
             post {
                 always {
