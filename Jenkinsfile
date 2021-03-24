@@ -3,12 +3,12 @@ pipeline {
   	stages {
 	    stage('Build') {
 	    	steps {
-	        	sh "mvn compile"
+	        	bat "mvn compile"
 	      	}
 	    }  
 	    stage('Test') {
 	      	steps {
-	        	sh "mvn test"
+	        	bat "mvn test"
 	      	}
 	     	post {
 	      		always {
@@ -18,7 +18,7 @@ pipeline {
 	    }
     	stage('newman') {
             steps {
-               	sh 'newman run postman/postmancollection.json --environment postmanenvironment.json --reporters junit'
+               	bat 'newman run postman/postmancollection.json --environment postmanenvironment.json --reporters junit'
             }
             post {
                 always {
