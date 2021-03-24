@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Robot Framework System tests with Selenium') {
             steps {
-                bat 'robot --variable BROWSER:headlesschrome -d Results  Tests'
+                bat 'pythonProject Lab2/Test/robot --variable BROWSER:headlesschrome -d Results  Tests'
             }
             post {
                 always {
