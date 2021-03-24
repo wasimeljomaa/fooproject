@@ -3,12 +3,12 @@ pipeline {
   	stages {
 	    stage('Build') {
 	    	steps {
-	        	bat "mvn compile"
+	        	sh "mvn compile"
 	      	}
 	    }  
 	    stage('Test') {
 	      	steps {
-	        	bat "mvn test"
+	        	sh "mvn test"
 	      	}
 	     	post {
 	      		always {
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Robot Framework System tests with Selenium') {
             steps {
-                bat ' InfotivLab/Test/ robot --variable BROWSER:headlesschrome -d Results InfotivLab/Test Results'
+                sh ' InfotivLab/Test/ robot --variable BROWSER:headlesschrome -d Results InfotivLab/Test Results'
             }
             post {
                 always {
